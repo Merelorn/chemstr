@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -std=c++11 -c 
 LFLAGS = -L/home/wondrash/c++/lib 
 LIBS = -Wl,-Bstatic -lprops -lstdc++ -Wl,-Bdynamic
-INCLUDES = -I/home/wondrash/c++/include/eigen -I/home/wondrash/c++/include 
+INCLUDES = -I/home/wondrash/c++/include 
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 
@@ -10,8 +10,8 @@ default: strpams ghash mirrorflip dihedral_list dihedral_compare idecon unimorph
 	@echo "chemstr has been compiled"
 	@cp ./{ghash,strpams,mirrorflip,dihedral_list,dihedral_compare,angle_compare} ~/bin/
 
-libchemstr: $(OBJS)
-	$(CC) -shared chemstr.o -o /home/wondrash/c++/lib/libchemstr.so
+libchemstr: 
+	$(CC) $(CFLAGS) $(INCLUDES) -shared -fPIC $(LFLAGS) chemstr.cpp -o /home/wondrash/c++/lib/libchemstr.so $(LIBS) 
 
 idecon: $(OBJS)
 	$(CC) $(INCLUDES) $(LFLAGS) chemstr.o idecon.o -o idecon $(LIBS)

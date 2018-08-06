@@ -4,7 +4,7 @@
 #include <stdlib.h>	// atoi
 #include <props.h>	// ReadColumn, ends_with, file_exists
 #include <iostream>
-#include <iterator>
+#include <iterator>	// std::next
 
 const float A2AU = 1.889725989; // Angstrom to atomic units
 bool debug = false;
