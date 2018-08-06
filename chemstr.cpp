@@ -389,6 +389,10 @@ precision Structure::measure_angle(int a1, int a2, int a3) const{
   return measure_angle(&atoms[a1], &atoms[a2], &atoms[a3]);
 }
 
+precision Structure::measure_distance(int a1, int a2) const{
+  return measure_distance(&atoms[a1], &atoms[a2]);
+}
+
 precision Structure::measure_dihedral(const Atom* a1, const Atom* a2, const Atom* a3, const Atom* a4) const{
     Vector3p arm1 = (a2->getXYZ() - a1->getXYZ());
     Vector3p arm2 = (a3->getXYZ() - a2->getXYZ());
@@ -402,6 +406,10 @@ precision Structure::measure_angle(const Atom* a1, const Atom* a2, const Atom* a
     Vector3p arm1 = (a1->getXYZ() - a2->getXYZ());
     Vector3p arm2 = (a3->getXYZ() - a2->getXYZ());
     return acos(arm1.dot(arm2)/(arm1.norm()*arm2.norm())) * 180 / M_PI;
+}
+
+precision Structure::measure_distance(const Atom* a1, const Atom* a2) const{
+    return (a1->getXYZ() - a2->getXYZ()).norm();
 }
 
 void Structure::getDihedral(int depth, Dihedral & current, std::set<Dihedral> & my_dihedrals, bool unique){

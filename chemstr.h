@@ -81,6 +81,8 @@ public:
   precision measure_dihedral(const Atom* a1, const Atom* a2, const Atom* a3, const Atom* a4) const; 
   precision measure_angle(int a1, int a2, int a3) const;
   precision measure_angle(const Atom* a1, const Atom* a2, const Atom* a3) const;
+  precision measure_distance(int a1, int a2) const;
+  precision measure_distance(const Atom* a1, const Atom* a2) const;
   void getDihedral(int depth, Dihedral & current, std::set<Dihedral> & my_dihedrals, bool unique = true);
   void getAngle(int depth, Angle & current, std::set<Angle> & my_angles);
 
