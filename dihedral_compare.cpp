@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <props.h>
 #include <iostream>
-#include "read_in.h"
+#include "chemstr.h"
 #include <set>
 #include <stdlib.h>
 

@@ -1,4 +1,4 @@
-#include "read_in.h"
+#include "chemstr.h"
 #include <algorithm>	// std::equal
 #include <iomanip>	// ios::setprecision
 #include <stdlib.h>	// atoi

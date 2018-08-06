@@ -1,11 +1,11 @@
 #include <algorithm>
 #include <iostream>
 #include <iomanip>
-#include "read_in.h"
+#include "chemstr.h"
 #include "hung.h"
 #include <vector>
 #include <props.h>
-#include "recognize.h"
+#include "fg.h"
 
 std::vector<int> a_xy, a_yx; // list of assignments that have been definitely confirmed;
 std::vector<int> a2a; // which anchor (from str1) is bound to which anchor (in str2) - indices

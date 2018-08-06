@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <props.h>
 #include <iostream>
-#include "read_in.h"
+#include "chemstr.h"
 #include <set>
 
 const float PI_F = 3.14159265;

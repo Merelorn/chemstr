@@ -1,4 +1,4 @@
-#include "read_in.h"
+#include "chemstr.h"
 #include <props.h>
 #include <iostream>
 

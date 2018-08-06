@@ -10,6 +10,9 @@ default: strpams ghash mirrorflip dihedral_list dihedral_compare idecon unimorph
 	@echo "chemstr has been compiled"
 	@cp ./{ghash,strpams,mirrorflip,dihedral_list,dihedral_compare,angle_compare} ~/bin/
 
+libprops.so: $(OBJS)
+	$(CC) -shared chemstr.o -o /home/wondrash/c++/lib/libchemstr.so
+
 idecon: $(OBJS)
 	$(CC) $(INCLUDES) $(LFLAGS) chemstr.o idecon.o -o idecon $(LIBS)
 

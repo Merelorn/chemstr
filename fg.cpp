@@ -2,6 +2,8 @@
 #include <iostream>
 #include <algorithm> // max_element
 
+extern bool debug;
+
 void FunctionalGroup::orderUp(){
   int current = 0;
 

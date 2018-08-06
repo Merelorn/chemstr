@@ -1,4 +1,5 @@
 #pragma once
+#include "chemstr.h"
 #include <vector>
 
 class FunctionalGroup{
