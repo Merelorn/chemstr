@@ -575,8 +575,27 @@ bool Angle::operator==(const Angle & rhs) const {
 }
 
 
+bool Structure::writeTMOL(std::string file, bool append){
+        std::string line;
+        std::ofstream myofile;
+        myofile.open(file);
 
-//bool Structure::writeTMOL(std::string file, append = false);
+        if ( ! atoms.size() != 0 ){ return false;}
+
+        myofile << props::tostring(int(atoms.size())) << std::endl;
+        myofile << std::endl;
+        myofile << std::setprecision(15) << std::fixed;
+
+        for ( int i = 0; i < atoms.size(); i++){
+                myofile.width(20); myofile << std::right << atoms[i].getXYZ().x();
+                myofile.width(20); myofile << std::right << atoms[i].getXYZ().y();
+                myofile.width(20); myofile << std::right << atoms[i].getXYZ().z();
+                myofile.width(3); myofile << std::left << atoms[i].getTYPE();
+                myofile << std::endl;
+        }
+        myofile.close();
+        return true;
+}
 
 // Structure - END
 
