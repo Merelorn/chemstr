@@ -589,7 +589,7 @@ bool Structure::writeTMOL(std::string file, bool append){
                 myofile.width(20); myofile << std::right << atoms[i].getXYZ().x();
                 myofile.width(20); myofile << std::right << atoms[i].getXYZ().y();
                 myofile.width(20); myofile << std::right << atoms[i].getXYZ().z();
-                myofile.width(3); myofile << std::left << atoms[i].getTYPE();
+                myofile.width(3); myofile << std::right << atoms[i].getTYPE();
                 myofile << std::endl;
         }
         myofile << "$end" << std::endl;
