@@ -582,8 +582,7 @@ bool Structure::writeTMOL(std::string file, bool append){
 
         if ( ! atoms.size() != 0 ){ return false;}
 
-        myofile << props::tostring(int(atoms.size())) << std::endl;
-        myofile << std::endl;
+        myofile << "$coord" << std::endl;
         myofile << std::setprecision(15) << std::fixed;
 
         for ( int i = 0; i < atoms.size(); i++){
@@ -593,6 +592,7 @@ bool Structure::writeTMOL(std::string file, bool append){
                 myofile.width(3); myofile << std::left << atoms[i].getTYPE();
                 myofile << std::endl;
         }
+        myofile << "$end" << std::endl;
         myofile.close();
         return true;
 }
